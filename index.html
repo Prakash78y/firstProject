@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" >
+    
+    <style>
+        *{
+           margin: 0px;
+           padding: 0px;
+           box-sizing: border-box;
+           font-family: 'Lexend Peta', sans-serif;
+           
+        }
+        body{
+            background-color: #222;
+        }
+        h1{
+            font-size: 3rem;
+        }
+        h2{
+            font-size: 2rem;
+        }
+        h3{
+            font-size: 1.5rem;
+        }
+        .firstP{
+            height: 100vh;
+            display: grid;
+            grid-template-areas: 100px 200px 200px;
+            align-items: start;
+            position: relative;
+            overflow: hidden;
+            
+            
+        }
+        /* #firstpic{
+            height: 300px;
+            padding-left: 250px;
+            width: 100%;
+        } */
+        span{
+            color:rgb(23, 191, 221);
+            font-size: 35px;
+           
+            font-weight: bold;
+            font-style: italic;
+            
+        }
+        span:hover{
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+        }
+        
+        .logo{
+            margin-top: 10px;
+            color: #00bcd4;
+            font-size: 25px;
+            font-style: italic;
+        }
+        .navbar{
+            /* border: 2px solid green; */
+             display: flex;
+            top: 0; 
+             justify-content: space-between;
+            
+            color: white; 
+         position: fixed;
+         width: 100%;
+         z-index: 9999;
+         background-color:#343232;
+        
+           
+        } 
+        html{
+            scroll-behavior: smooth!important;
+        }
+
+         .navbar ul li {
+            
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 5px 15px;
+            list-style: none;
+            
+        }
+        .navbar ul li a{
+            position: relative;
+             text-decoration: none; 
+            color:white;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 0 10px;
+        } 
+       
+        .navbar a:after{
+            content: "";
+            position: absolute;
+            background-color:white;
+            height: 3px;
+            width: 0;
+            left: 0;
+            bottom: -10px;
+            transition: 0.3s;
+        } 
+       
+         a:hover:after{
+            width: 100%;
+        }
+        .nav-toggle{
+            display: none;
+        }
+       
+       
+        .mainT{
+            position: absolute;
+            top: 261px;
+            left: 14px;
+            display: grid;
+            grid-template-columns: 580px 500px;
+            justify-content: space-evenly;
+            text-align: center;
+            gap: 30px;
+        }
+        .check{
+            margin-top: 10px;
+            margin-left: 5px;
+            padding-left: 7px;
+            font-size: 29px;
+            font-weight: bold;
+            color: white;
+             
+              transition: all 1s ease-in; 
+            
+        }
+        
+        .info{
+            display: grid;
+            grid-template-columns: auto auto;
+
+            justify-content: center;
+            margin-top: 10px;
+            padding: 10px;
+            
+        }
+       
+         .info .Socialicon ul li a{
+            
+            
+            height: 50px;
+            width: 50px;
+            background-color: #f5f6fa;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin-left: 10px ;
+            box-shadow: 0px 0px 1px 1px #dcdde1;
+
+         }
+         
+         .Socialicon ul{
+            list-style-type: none;
+            display: flex;
+         }
+         
+         a i{
+            transition: all 0.3s linear;
+         }
+         a:hover i{
+            transform: scale(1.3);
+         }
+         .fa-instagram{
+            color: #e84393;
+         }
+         .fa-linkedin{
+            color: #0097e6;
+         }
+         .fa-facebook{
+            color: #0097e8;
+         }
+         .fa-whatsapp{
+            color: rgb(76, 202, 76);
+         }
+         
+        button{
+            color: white;
+            background-color: rgb(79, 194, 214);;
+            border-radius: 15px;
+            height: 39px;
+            width: 120px;
+            text-align: center;
+            padding: 3px;
+            font-weight: bold;
+           
+        }
+        button:hover{
+            box-shadow: 0 0 4px 5px rgb(21, 18, 18);
+            transform: scale(1.1);
+           
+        }
+        
+       
+
+        
+        .navbar  li a:hover,.navbar li a.active{
+            color:rgb(79, 194, 214);
+        }
+
+       
+       
+
+        /* ABOUT section */
+
+
+        .box{
+            height: 100vh;
+            width: 100%;
+            transition: all 2s ease-in;
+            overflow: hidden;
+            
+        }
+        .heading1{
+            display: grid;
+            text-align: center;
+            height: 200px;
+            margin-top: 20px;
+            align-items: center;
+            padding-top: 20px;
+            color: white;
+        }
+       
+        .para{
+            display: grid;
+            grid-template-columns: 200px 700px;
+            justify-content: space-between;
+            padding-left: 18px;
+            padding-right: 18px;
+            padding-top: 18px;
+          color:whitesmoke;
+          font-size: 20px;
+          font-weight: bolder;
+          line-height: 1.7;
+        }
+        #photo{
+            border-radius: 50%;
+            border: 4px solid white;
+            width: 320px;
+            height: 260px;
+            background-blend-mode: screen;
+        }
+        #name{
+            color: #00bcd4;
+            font-size: 10px;
+        }
+
+
+
+        /* SKILL SECTION */
+       
+        /* #SKILLS{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #222;
+       }
+       
+        .container{
+            background-color:#2a3334;
+            text-transform: uppercase;
+            width: 500px;
+            margin: 60px auto;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,1.0);
+        }
+        .container li{
+            margin: 20px 0;
+            padding: 10px;
+            list-style: none;
+        }
+        .bar{
+            background-color: #353b48;
+            display: block;
+            height: 20px;
+            border: 1px solid rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3% cubic-bezier(0.25,.8,.25,1);
+        }
+        .bar:hover{
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+        }
+        .bar span{
+            height: 20px;
+            float: left;
+            background: linear-gradient(135deg,rgba(236,0,140,1)0%,rgba(252,103,103,1)100%);
+        }   
+        
+        .html{
+            width: 90%;
+            animation: html 2s;
+        }
+        .css{
+            width: 50%;
+            animation: css 2s;
+        }
+        .javascript{
+            width: 25%;
+            animation: javascript 2s;
+        }
+        .java{
+            width: 70%;
+            animation: java 2s;
+        }
+       
+        @keyframes html {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 90%;
+            }
+            
+        }
+        
+        @keyframes css {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 50%;
+            }
+            
+        }
+        @keyframes javascript  {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 25%;
+            }
+            
+        }
+        @keyframes java {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 70%;
+            }
+            
+        }
+        .heading2{
+            text-align: center;
+
+        }
+        h3{
+            margin: 5px;
+        } */
+
+      
+        
+      
+
+        .skill{
+            height: 100vh;
+            display: grid;
+           grid-template-areas: "hrd hrd hrd hrd"
+                                 "main main main main"   
+                                                ;
+                 overflow: hidden;                               
+        }
+        #html{
+            height: 300px;
+            width: 300px;
+            background-color:#2a3334;
+           
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,1.0);
+        }
+        #html:hover{
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.1);
+        }
+        #css{
+            height: 300px;
+            width: 300px;
+            background-color:#2a3334;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,1.0);
+        }
+        #css:hover{
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.1);
+        }
+        #javascript{
+            height: 300px;
+            width: 300px;
+            background-color:#2a3334;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,1.0);
+        }
+        #javascript:hover{
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.1);
+        }
+        #java{
+            height: 300px;
+            width: 300px;
+            background-color:#2a3334;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,1.0);
+        }
+        #java:hover{
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.1);
+        }
+        .head{
+          grid-area: hrd;
+          display: grid;
+         text-align: center;
+         align-items: center;
+         color: white;
+         font-weight: bold;
+
+        }
+        .main{
+            grid-area: main;
+            display: grid;
+            width: 100%;
+            grid-template-columns: auto auto auto auto;
+            align-items: center;
+            text-align: center;
+            color: white;
+            justify-content: space-evenly;
+        }
+        .image{
+            height: 200px;
+            width: 200px;
+            display: fixed !important;
+        }
+        .bar{
+            background-color: #353b48;
+            display: block;
+            height: 20px;
+            border: 1px solid rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3% cubic-bezier(0.25,.8,.25,1);
+            margin-top: 20px;
+        }
+        .bar:hover{
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+        }
+        .bar span{
+            height: 20px;
+            float: left;
+            background: linear-gradient(135deg,rgba(236,0,140,1)0%,rgba(252,103,103,1)100%);
+        }   
+        .html{
+            width: 90%;
+            animation: html 2s;
+        }
+        .css{
+            width: 50%;
+            animation: css 2s;
+        }
+        .javascript{
+            width: 25%;
+            animation: javascript 2s;
+        }
+        .java{
+
+            width: 70%;
+            animation: java 2s;
+        }
+       
+        @keyframes html {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 90%;
+            }
+            
+        }
+        
+        @keyframes css {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 50%;
+            }
+            
+        }
+        @keyframes javascript  {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 25%;
+            }
+            
+        }
+        @keyframes java {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 70%;
+            }
+            
+        }
+        
+        
+        h3{
+            margin: 5px;
+        } 
+
+        
+        /* Contact section */
+        .contact{
+            position: relative;
+            min-height: 100vh;
+            padding: 50px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-size: cover;
+        }
+        .contact .content{
+            max-width: 800px;
+            text-align: center;
+        }
+        .contact .content h2{
+            font-size: 36px;
+            font-weight: 500;
+            color: #fff;
+        }
+       
+        .CONTAINER{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .CONTAINER .contactInfo{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        .CONTAINER .contactInfo .BOX{
+            position: relative;
+            padding: 20px 0;
+            display: flex;
+        }
+        .CONTAINER .contactInfo .BOX .icon{
+            min-width: 60px;
+            height: 60px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 22px;
+
+        }
+        .CONTAINER .contactInfo .BOX .text{
+            display: flex;
+            margin-left: 20px;
+            font-size: 16px;
+            color: #fff;
+            flex-direction: column;
+            font-weight: 300;
+        }
+        .CONTAINER .contactInfo .BOX .text h3{
+            font-weight: 500;
+            color: #00bcd4;
+        }
+        .contacForm{
+            width: 40%;
+            padding: 40px;
+            background: #fff;
+        }
+        .contacForm h2{
+            font-size: 30px;
+            color: #333;
+            font-weight: 500;
+        }
+        .contacForm .inputBox{
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .contacForm .inputBox input, .contacForm .inputBox textarea{
+            width: 100%;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #333;
+            outline: none;
+            resize: none;
+        }
+        .contacForm .inputBox span{
+            position:absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            pointer-events: none;
+            transition: 0.5;
+            color: #666;
+        }
+        .contacForm .inputBox input:focus ~ span,.contacForm .inputBox input:valid ~ span
+        .contacForm .inputBox textarea:focus ~ span,.contacForm .inputBox textarea:valid ~ span
+        {
+            color: #e91e63;
+            font-size: 12px;
+            transform: translateY(-20px);
+        }
+        .contacForm .inputBox input[type="submit"]{
+            width: 100px;
+            background-color: #00bcd4;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 18px;
+
+        }
+        /* @media (max-width:991px) {
+            .contact{
+                padding: 50px;
+            }
+            .CONTAINER{
+                flex-direction: column;
+            }
+            .CONTAINER .contactInfo{
+                margin-bottom: 40px;
+            }
+            .CONTAINER .contactInfo,.contactForm{
+                width: 100%;
+            }
+            
+        } */
+        @media screen and (max-width:1024px) {
+            h3{
+                font-size: 1.2rem;
+            }
+            
+            .navbar ul li{
+                flex-wrap: wrap;
+            }
+            .main{
+                width: calc(50%-10px);
+                flex-wrap: wrap;
+                gap: 20px;
+                display: flex;
+
+            }
+            .para{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .mainT{
+                /* display: grid; */
+                /* grid-template-columns: 400px 400px; */
+                gap: 50px;
+            }
+            
+        }
+        @media screen and (max-width:768px) {
+            .mainT{
+                display: flex;
+                flex-direction: column-reverse;
+                padding-left: 200px;
+            }
+            
+            
+        }
+        @media screen and (max-width:479px) {
+            .mainT{
+                /* display: flex; */
+                /* flex-direction: column-reverse; */
+                padding-left: 31px;
+            }
+            .para{
+                flex-direction: column;
+                text-align: center;
+                
+            }
+            .box{
+                height: 110vh;
+            }
+            .skill{
+                height: 170vh;
+            }
+            .contact{
+                padding: 50px;
+            }
+            .CONTAINER{
+                flex-direction: column;
+            }
+            .CONTAINER .contactInfo{
+                margin-bottom: 40px;
+            }
+            .CONTAINER .contactInfo,.contactForm{
+                width: 100%;
+            }
+            .contacForm .inputBox input, .contacForm .inputBox textarea{
+                padding: 9px;
+                letter-spacing: 1.2px;
+            }
+            
+            
+        }
+        hr{
+            border: 4px solid white;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <section id="HOME">
+
+        <div class="firstP">
+            <div class="navbar">
+                <h3 class="logo">PORTFOLIO</h3>
+                <ul>
+                    <li><a href="#HOME" class="active">HOME</a></li>
+                    <li><a href="#ABOUT ME">ABOUT ME</a></li>
+                    <li><a href="#SKILLS">SKILLS</a></li>
+                    <li><a href="#CONTACT ME">CONTACT ME</a></li>
+                </ul>
+                <a href="#" class="nav-toggle hover-link" style="color: white;"><i class="fa-solid fa-bars"></i></a>
+            </div>
+
+           
+            <div class="mainT">
+                <div class="check">
+    
+                    <h4>Hi I'am Prakash Yadav</h4>
+                    <h3>I'am a<span>Web developer $ <br> Programer </span> </h3>
+                 <div class="info">
+                    <button type="button" name="button" placeholder="Contact">CONTACT
+                    </button>
+                   
+                      <div class="Socialicon">
+    
+                          <ul>
+                            <li><a href="https://www.facebook.com" target="_blank">
+                                 <i class="fa-brands fa-facebook" ></i></a>
+
+                            </li>
+                            <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram" ></i></a>
+                            
+                            </li>
+                            <li><a href="https://www.whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+                            </li>
+                            <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin" ></i></a>
+
+                            </li>
+                            
+                              
+                          </ul>
+                      </div>
+                    </div>
+                        
+                       
+                </div>
+                
+                 <img src="pngP.png" alt="" style="height: 300px;">
+            
+            </div>
+        </div>
+        
+    </section>
+    <hr>
+    
+
+    <!-- ABOUT SECTION -->
+
+    <section id="ABOUT ME">
+        <div  class="box" >
+            <h2 class="heading1" >ABOUT ME</h2>
+               <div class="para">
+                   <img id="photo" src="about.jpg" alt="">
+               <p>Hi, my name is <br><span>Prakash Yadav</span><br>I'm a Web developer,and I'm very passionate and dedicated to my work.I can provide clean code and pixel perfect design. I also make the website more $ more interactive with web animation.A resposive design makes your website your website accessible to all users,regardless of their device.
+                Currently I am pursuing my B.tech in CSE. I open source contributer. 
+            </div>
+        </div>
+    </section>
+
+
+ 
+<hr>
+
+    <!-- SKILLS SECOTION -->
+
+    
+       <!-- <section id="SKILLS">
+              <div class="container">
+                <h2 class="heading2"> MY SKILLS</h2>
+                <li><h3>HTML</h3>
+                    <div class="skill-per" per="90%"></div>
+                    <span class="bar"><span class="html"></span></span>
+                </li>
+                <li><h3>CSS</h3>
+                    <span class="bar"><span class="css"></span></span>
+                </li>
+                <li><h3>JAVASCRIPT</h3>
+                    <span class="bar"><span class="javascript"></span></span>
+                </li>
+                <li><h3>JAVA</h3>
+                    <span class="bar"><span class="java"></span></span>
+                </li>
+              </div>
+       </section>
+       <br> -->
+       <hr>
+       <section id="SKILLS">
+           <div class="skill">
+            <h1 class="head">My Skills</h1>
+
+       
+             <div class="main">
+
+                 <div id="html">
+                        <!-- <h3 >HTML</h3> -->
+                        <img src="htmlP.png" alt="" class="image">
+                        <span class="bar"><span class="html"></span></span>
+                   
+  
+                 </div>
+                 <div id="css">
+  
+                 <!-- <h3>CSS</h3> -->
+                 <img src="cssP.jpg" alt="" class="image">
+                 <span class="bar"><span class="css"></span></span>
+  
+                 </div>
+                 <div id="javascript">
+                        <!-- <h2>JAVASCRIPT</h2> -->
+                        <img src="javaScriptP.png" alt="" class="image">
+                        <span class="bar"><span class="javascript"></span></span>
+  
+                 </div>
+                 <div id="java">
+                        <!-- <h3>JAVA</h3> -->
+                        <img src="javaI" alt="" class="image">
+                        <span class="bar"><span class="java"></span></span>
+  
+  
+                 </div>
+             </div>
+            </div>
+       </section>
+       <hr>
+
+
+
+<!-- Contact Me section -->
+
+      <section id="CONTACT ME">
+        <div class="contact">
+
+       
+        <div class="content">
+            <h2>Contact Us</h2>
+           
+        </div>
+        <div class="CONTAINER">
+            <div class="contactInfo">
+                <div class="BOX">
+                    <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>L-1211 <br>HINDALCO COLONY <br>RENUKOOT SONEBHARDRA</p>
+                    </div>
+                </div>
+                <div class="BOX">
+                    <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+91-7607572814</p>
+                    </div>
+                </div>
+                <div class="BOX">
+                    <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>prakashyadav524562@gmail.com</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="contacForm">
+                <form >
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                       <textarea required="required"></textarea>
+                        <span>Type your Message</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                        
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+      </section>
+
+
+</body>
+</html>
